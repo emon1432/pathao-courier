@@ -31,4 +31,14 @@ return [
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
 
+    'pathao' => [
+        'base_url' => env('PATHAO_BASE_URL'),
+        'client_id' => env('PATHAO_CLIENT_ID'),
+        'client_secret' => env('PATHAO_CLIENT_SECRET'),
+        'client_email' => env('PATHAO_CLIENT_EMAIL'),
+        'client_password' => env('PATHAO_CLIENT_PASSWORD'),
+        'grant_type' => env('PATHAO_GRANT_TYPE'),
+    ],
+
+
 ];
