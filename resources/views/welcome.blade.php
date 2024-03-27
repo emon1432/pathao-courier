@@ -20,8 +20,8 @@
         <option value="">Select Area</option>
     </select>
 
-    {{-- <div id="table-container"></div>
-    <div id="pagination"></div> --}}
+    <div id="table-container"></div>
+    <div id="pagination"></div>
 
 
 
