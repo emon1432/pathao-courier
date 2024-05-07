@@ -40,6 +40,22 @@ class PathaoAPIService
         return json_decode($response->getBody(), true)['access_token'];
     }
 
+    public function createStore($accessToken, $storeData)
+    {
+        $client = new Client();
+        // <base_url>/aladdin/api/v1/stores
+        $response = $client->post("$this->base_url/aladdin/api/v1/stores", [
+            'headers' => [
+                'Authorization' => "Bearer $accessToken",
+                'Content-Type' => 'application/json',
+                'Accept' => 'application/json',
+            ],
+            'json' => $storeData
+        ]);
+
+        return json_decode($response->getBody(), true);
+    }
+
     public function getStores($accessToken)
     {
         $client = new Client();
@@ -118,6 +134,7 @@ class PathaoAPIService
                 'item_weight' => 0.5,
                 'recipient_city' => 1,
                 'recipient_zone' => 248,
+                'recipient_area' => 17920,
             ]
         ]);
 

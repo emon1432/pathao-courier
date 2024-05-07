@@ -16,6 +16,22 @@ class PathaoController extends Controller
         $this->pathaoService = $pathaoService;
     }
 
+    public function createStore(Request $request)
+    {
+        $accessToken = $this->pathaoService->getAccessToken();
+        $data = [];
+        $data['name'] = "Emon Store";
+        $data['contact_name'] = "Emon";
+        $data['contact_number'] = "01521437220";
+        $data['secondary_contact'] = "01638849305";
+        $data['address'] = "Dholairpar, Jatrabari";
+        $data['city_id'] = 1;
+        $data['zone_id'] = 248;
+        $data['area_id'] = 17920;
+        $store = $this->pathaoService->createStore($accessToken, $data);
+        return response()->json($store);
+    }
+
     public function getStores()
     {
         $accessToken = $this->pathaoService->getAccessToken();

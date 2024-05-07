@@ -18,6 +18,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/create-store', [PathaoController::class, 'createStore']);
 Route::get('/store-list', [PathaoController::class, 'getStores']);
 Route::get('/city-list', [PathaoController::class, 'getCityList']);
 Route::get('/zone-list/{cityId}', [PathaoController::class, 'getZoneList']);
